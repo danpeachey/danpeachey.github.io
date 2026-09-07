@@ -1,0 +1,153 @@
+---
+const areas = [
+  {
+    title: "Media",
+    description:
+      "Ingest, transcode, and distribute content at scale with storage and delivery architectures built for high-volume media pipelines.",
+    color: "#1a73e8",
+    icon: "media",
+  },
+  {
+    title: "Entertainment",
+    description:
+      "Render farms, VFX pipelines, and content workflows engineered on cloud compute for throughput, cost control, and reliability.",
+    color: "#4fb6da",
+    icon: "entertainment",
+  },
+  {
+    title: "Gaming",
+    description:
+      "Low-latency game backends, matchmaking, and live-ops infrastructure that scale from launch day to peak concurrency.",
+    color: "#c9a24e",
+    icon: "gaming",
+  },
+  {
+    title: "AI",
+    description:
+      "Production ML infrastructure — from data pipelines to model serving on Vertex AI or SageMaker — built to move from prototype to scale.",
+    color: "#0f2540",
+    icon: "ai",
+  },
+];
+---
+
+<section class="focus" id="focus">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">Focus Areas</span>
+      <h2>Deep expertise where content, play, and intelligence meet the cloud.</h2>
+    </div>
+
+    <div class="grid">
+      {
+        areas.map((area) => (
+          <div class="card">
+            <div class="icon" style={`--icon-color: ${area.color}`}>
+              {area.icon === "media" && (
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <circle cx="12" cy="12" r="8" />
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 4v2M12 18v2M4 12h2M18 12h2" />
+                </svg>
+              )}
+              {area.icon === "entertainment" && (
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <path d="M4 8l5-4 5 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8z" />
+                  <path d="M15 12l5-3v9l-5-3" />
+                </svg>
+              )}
+              {area.icon === "gaming" && (
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <rect x="2.5" y="7.5" width="19" height="10" rx="4" />
+                  <path d="M7 10v4M5 12h4" />
+                  <circle cx="16" cy="10.5" r="0.9" fill="currentColor" stroke="none" />
+                  <circle cx="18" cy="13.5" r="0.9" fill="currentColor" stroke="none" />
+                </svg>
+              )}
+              {area.icon === "ai" && (
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <rect x="7" y="7" width="10" height="10" rx="2" />
+                  <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2" />
+                </svg>
+              )}
+            </div>
+            <h3>{area.title}</h3>
+            <p>{area.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .focus {
+    padding: 5rem 0;
+  }
+
+  .head {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 12px 28px rgba(15, 37, 64, 0.1);
+    transform: translateY(-3px);
+    border-color: transparent;
+  }
+
+  .icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--icon-color) 12%, white);
+    color: var(--icon-color);
+    margin-bottom: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    color: var(--text-dim);
+    font-size: 0.94rem;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

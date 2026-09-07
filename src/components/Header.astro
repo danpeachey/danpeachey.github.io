@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+import icon from "../assets/logo-icon.png";
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="#top" class="brand" aria-label="MEGA Cloud Consulting — home">
+      <Image src={icon} alt="" width={36} height={36} />
+      <span class="wordmark">
+        MEGA <span class="wordmark-light">Cloud Consulting</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#focus">Focus Areas</a>
+      <a href="#approach">Approach</a>
+      <a href="#why">Why MEGA Cloud Consulting</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary cta">Get in touch</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 4.25rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    flex: none;
+    margin-right: auto;
+  }
+
+  .brand :global(img) {
+    height: 2.25rem;
+    width: auto;
+  }
+
+  .wordmark {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .wordmark-light {
+    font-weight: 400;
+    color: var(--text-dim);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+  }
+
+  .nav a:hover {
+    opacity: 1;
+    color: var(--blue);
+  }
+
+  .cta {
+    flex: none;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 860px) {
+    .nav {
+      display: none;
+    }
+    .wordmark-light {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta {
+      padding: 0.55rem 0.9rem;
+    }
+  }
+</style>

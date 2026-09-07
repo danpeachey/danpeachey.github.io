@@ -1,0 +1,118 @@
+---
+const steps = [
+  {
+    n: "01",
+    title: "Assess",
+    description:
+      "We audit your current workloads, spend, and architecture to find the fastest path to a stable, scalable foundation — on AWS, GCP, or both.",
+  },
+  {
+    n: "02",
+    title: "Design",
+    description:
+      "A tailored architecture — compute, storage, networking, and AI/ML services — sized for your workload, not a generic template.",
+  },
+  {
+    n: "03",
+    title: "Migrate & build",
+    description:
+      "Hands-on implementation with your engineers, from proof of concept through production rollout, with minimal disruption.",
+  },
+  {
+    n: "04",
+    title: "Optimize",
+    description:
+      "Ongoing tuning for cost, performance, and reliability as usage grows — so the cloud bill scales slower than the business.",
+  },
+];
+---
+
+<section class="approach" id="approach">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">How We Work</span>
+      <h2>A straightforward path from where you are to production on AWS or GCP.</h2>
+    </div>
+
+    <div class="steps">
+      {
+        steps.map((step) => (
+          <div class="step">
+            <span class="n">{step.n}</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .approach {
+    padding: 5rem 0;
+    background: var(--bg-soft);
+  }
+
+  .head {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .step {
+    position: relative;
+    padding-top: 0.5rem;
+  }
+
+  .step::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 2.5rem;
+    background: var(--blue);
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+
+  .n {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .step p {
+    color: var(--text-dim);
+    font-size: 0.94rem;
+  }
+
+  @media (max-width: 900px) {
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 2rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

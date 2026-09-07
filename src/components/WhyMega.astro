@@ -1,0 +1,101 @@
+---
+const points = [
+  {
+    title: "Industry-specific",
+    description:
+      "We only work in media, entertainment, gaming, and AI — so recommendations come from pattern-matching real workloads, not generic best practices.",
+  },
+  {
+    title: "Multi-cloud, by design",
+    description:
+      "Hands-on expertise across both AWS and Google Cloud — compute, storage, data, and AI/ML services — so the recommendation fits the workload, not a single vendor.",
+  },
+  {
+    title: "Right-sized engagements",
+    description:
+      "From a two-week architecture review to a multi-quarter migration, scoped to the problem in front of you — not a fixed retainer.",
+  },
+];
+---
+
+<section class="why" id="why">
+  <div class="container why-grid">
+    <div class="head">
+      <span class="eyebrow" style="color:#7fd4ee">Why MEGA Cloud Consulting</span>
+      <h2>Cloud consulting that's focused, not generic.</h2>
+      <p>
+        We chose to specialize instead of covering every industry — so every
+        engagement starts with context you'd otherwise have to explain from
+        scratch.
+      </p>
+    </div>
+
+    <div class="points">
+      {
+        points.map((point) => (
+          <div class="point">
+            <h3>{point.title}</h3>
+            <p>{point.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .why {
+    padding: 5rem 0;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+  }
+
+  .head h2 {
+    color: #fff;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    margin-bottom: 1rem;
+  }
+
+  .head p {
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 38ch;
+    font-size: 1rem;
+  }
+
+  .points {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .point {
+    padding-left: 1.25rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .point h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .point p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.94rem;
+  }
+
+  @media (max-width: 860px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .head p {
+      max-width: none;
+    }
+  }
+</style>

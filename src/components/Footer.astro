@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import icon from "../assets/logo-icon.png";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#top" class="brand" aria-label="MEGA Cloud Consulting — home">
+      <Image src={icon} alt="" width={28} height={28} />
+      <span>MEGA Cloud Consulting</span>
+    </a>
+
+    <nav aria-label="Footer">
+      <a href="#focus">Focus Areas</a>
+      <a href="#approach">Approach</a>
+      <a href="#why">Why MEGA Cloud Consulting</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <p class="copy">© {year} MEGA Cloud Consulting. Media · Entertainment · Gaming · AI.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .brand :global(img) {
+    height: 1.5rem;
+    width: auto;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  nav a:hover {
+    color: var(--blue);
+  }
+
+  .copy {
+    color: var(--text-dim);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 700px) {
+    .footer-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
